@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NailFree – Stop Nail Biting for Good</title>
+  <meta name="description" content="NailFree uses science-backed Habit Reversal Training to help you break the nail biting habit — for good. Free to download on iPhone.">
+  <meta property="og:title" content="NailFree – Stop Nail Biting for Good">
+  <meta property="og:description" content="Science-backed habit reversal training to help you stop biting your nails for good.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nailfree.today">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #2e7d5e;
+      --primary-light: #3d9b76;
+      --sage: #5aab87;
+      --sage-light: #eaf5ef;
+      --dark: #0f1f17;
+      --text: #1a2e24;
+      --text-secondary: #4a6358;
+      --bg: #f7faf8;
+      --white: #ffffff;
+      --border: #ddeee6;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 40px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(247, 250, 248, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(46, 125, 94, 0.08);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--primary), var(--sage));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .nav-logo-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .nav-cta {
+      background: var(--primary);
+      color: white !important;
+      padding: 10px 22px;
+      border-radius: 100px;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      transition: background 0.2s, transform 0.15s !important;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-light) !important;
+      color: white !important;
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 24px 80px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, #e8f5ee 0%, #f7faf8 40%, #edf7f2 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; left: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(46, 125, 94, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -150px; right: -150px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(90, 171, 135, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      border: 1px solid var(--border);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 32px;
+      box-shadow: 0 2px 12px rgba(46, 125, 94, 0.08);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge-dot {
+      width: 6px; height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 7vw, 72px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      color: var(--dark);
+      max-width: 720px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary), var(--sage));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin: 24px auto 0;
+      line-height: 1.65;
+      font-weight: 400;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 100px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(46, 125, 94, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(46, 125, 94, 0.4);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      color: var(--text);
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 100px;
+      font-size: 16px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* PHONE MOCKUP */
+    .hero-visual {
+      margin-top: 72px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: flex-end;
+    }
+
+    .phone-mockup {
+      width: 220px;
+      background: var(--dark);
+      border-radius: 36px;
+      padding: 12px;
+      box-shadow: 0 32px 80px rgba(15, 31, 23, 0.25), 0 8px 24px rgba(46, 125, 94, 0.15);
+      position: relative;
+    }
+
+    .phone-mockup.secondary {
+      width: 200px;
+      opacity: 0.75;
+      transform: translateY(30px);
+    }
+
+    .phone-screen {
+      background: linear-gradient(160deg, #1a3d2a, #0f2018);
+      border-radius: 26px;
+      aspect-ratio: 9/19.5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 20px 16px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .phone-screen-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary), var(--sage));
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 8px 24px rgba(46, 125, 94, 0.4);
+    }
+
+    .phone-screen-title {
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .phone-screen-sub {
+      color: rgba(255,255,255,0.55);
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .streak-badge {
+      background: rgba(46, 125, 94, 0.25);
+      border: 1px solid rgba(46, 125, 94, 0.4);
+      border-radius: 12px;
+      padding: 10px 16px;
+      color: #7dd4a8;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+      width: 100%;
+    }
+
+    .streak-number {
+      font-size: 28px;
+      font-weight: 800;
+      color: white;
+      display: block;
+    }
+
+    /* SOCIAL PROOF */
+    .social-proof {
+      padding: 48px 24px;
+      text-align: center;
+      background: white;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .social-proof-text {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .stars-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .stars {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .star-icons { color: #f5a623; font-size: 18px; letter-spacing: 2px; }
+
+    .stars-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .divider-dot {
+      width: 4px; height: 4px;
+      background: var(--border);
+      border-radius: 50%;
+    }
+
+    /* FEATURES */
+    .section {
+      padding: 100px 24px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--primary);
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--dark);
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 16px;
+      line-height: 1.15;
+    }
+
+    .section-sub {
+      font-size: 17px;
+      color: var(--text-secondary);
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto 64px;
+      line-height: 1.65;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px 28px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(46, 125, 94, 0.1);
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--sage-light);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .feature-card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* HOW IT WORKS */
+    .how-section {
+      padding: 100px 24px;
+      background: linear-gradient(160deg, #e8f5ee 0%, #f7faf8 100%);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .step {
+      text-align: center;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: var(--primary);
+      border-radius: 50%;
+      color: white;
+      font-size: 18px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .step h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-section {
+      padding: 100px 24px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    .testimonial-stars {
+      color: #f5a623;
+      font-size: 14px;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-text {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      margin: 0 24px 100px;
+      max-width: 1072px;
+      margin-left: auto;
+      margin-right: auto;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--sage) 100%);
+      border-radius: 28px;
+      padding: 80px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 50%;
+    }
+
+    .cta-section::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 250px; height: 250px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      color: white;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-section .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      color: var(--primary);
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 100px;
+      font-size: 16px;
+      font-weight: 700;
+      transition: transform 0.15s, box-shadow 0.2s;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .cta-section .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+
+    .cta-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.6);
+      padding: 48px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .footer-logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--primary), var(--sage));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+    }
+
+    .footer-logo-text {
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: white; }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* APPLE BADGE */
+    .apple-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #000;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 14px;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .apple-badge:hover {
+      opacity: 0.85;
+      transform: translateY(-2px);
+    }
+
+    .apple-badge-icon { font-size: 22px; }
+
+    .apple-badge-text { text-align: left; }
+
+    .apple-badge-sub {
+      display: block;
+      font-size: 10px;
+      opacity: 0.7;
+      font-weight: 400;
+    }
+
+    .apple-badge-main {
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .features-grid, .steps-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      footer { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      .cta-section { margin: 0 16px 60px; padding: 60px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon">🤚</div>
+      <span class="nav-logo-text">NailFree</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li>
+        <a href="https://apps.apple.com/app/id6761150154" class="nav-cta">
+          ↓ Download Free
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      Science-backed Habit Reversal Training
+    </div>
+
+    <h1>Your nails<br>deserve<br><span>better.</span></h1>
+
+    <p class="hero-sub">
+      NailFree is the app that helps you understand, intercept, and overcome the nail biting habit — for good.
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://apps.apple.com/app/id6761150154" class="btn-primary">
+        <span>🍎</span> Download on the App Store
+      </a>
+      <a href="#features" class="btn-secondary">
+        See how it works
+      </a>
+    </div>
+    <p class="hero-note">Free to download · 7-day Pro trial · iPhone only</p>
+
+    <div class="hero-visual">
+      <div class="phone-mockup secondary">
+        <div class="phone-screen">
+          <div class="phone-screen-icon">🔥</div>
+          <div class="phone-screen-title">Daily Check-In</div>
+          <div class="phone-screen-sub">Track your progress</div>
+          <div class="streak-badge">
+            <span class="streak-number">14</span>
+            Day Streak
+          </div>
+        </div>
+      </div>
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <div class="phone-screen-icon">🤚</div>
+          <div class="phone-screen-title">NailFree</div>
+          <div class="phone-screen-sub">Stop biting for good</div>
+          <div class="streak-badge">
+            <span class="streak-number">✓</span>
+            Urge Intercepted
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <div class="social-proof">
+    <p class="social-proof-text">Loved by users breaking the habit</p>
+    <div class="stars-row">
+      <div class="stars">
+        <span class="star-icons">★★★★★</span>
+        <span class="stars-label">5.0 on App Store</span>
+      </div>
+      <div class="divider-dot"></div>
+      <span style="font-size:15px; color: var(--text-secondary); font-weight:500;">Free to start</span>
+      <div class="divider-dot"></div>
+      <span style="font-size:15px; color: var(--text-secondary); font-weight:500;">No data collected</span>
+      <div class="divider-dot"></div>
+      <span style="font-size:15px; color: var(--text-secondary); font-weight:500;">iPhone only</span>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <p class="section-label">Features</p>
+    <h2 class="section-title">Everything you need to break free.</h2>
+    <p class="section-sub">
+      Built around proven behavioral science, not willpower.
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🌊</div>
+        <h3>Urge Interception</h3>
+        <p>The moment a craving hits, NailFree walks you through the WAVE technique — a science-backed method to ride out the urge without biting.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔥</div>
+        <h3>Streak Tracking</h3>
+        <p>Build momentum with daily streaks. Visual progress keeps you motivated — and smart alerts protect your streak before you lose it.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Trigger Insights</h3>
+        <p>Log what causes your urges — stress, boredom, focus — and see patterns emerge. Understanding your triggers is half the battle.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📸</div>
+        <h3>Nail Progress Photos</h3>
+        <p>Watch your nails grow back. A private photo timeline shows you how far you've come — stored only on your device.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧘</div>
+        <h3>Breathing Exercises</h3>
+        <p>Three guided techniques (4-7-8, Box, Quick Reset) help calm the nervous response behind nail biting in under two minutes.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏠</div>
+        <h3>Home Screen Widget</h3>
+        <p>Keep your streak visible on your home screen. A gentle, always-on reminder that you're in control — no app needed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section" id="how-it-works">
+    <div style="max-width: 1120px; margin: 0 auto;">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">Three steps to nail freedom.</h2>
+      <p class="section-sub">NailFree follows the Habit Reversal Training (HRT) framework used by behavioral therapists.</p>
+
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Identify your triggers</h3>
+          <p>Learn what situations, emotions, and environments trigger your nail biting. Awareness is the foundation of change.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Intercept the urge</h3>
+          <p>When a craving hits, the urge flow guides you through competing responses and breathing techniques that break the cycle.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Build the new habit</h3>
+          <p>Daily check-ins, streaks, and progress photos reinforce your identity as someone who doesn't bite their nails.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <p class="section-label">Reviews</p>
+    <h2 class="section-title">People are breaking the habit.</h2>
+    <p class="section-sub">Real results from real users on the App Store.</p>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"I've tried stopping so many times. This app actually helped me understand WHY I bite. Two weeks clean and my nails look better than they have in years."</p>
+        <p class="testimonial-author">— App Store review</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The urge interception screen is a game changer. Instead of just giving in, I now have something to do in the moment. My streak is at 21 days."</p>
+        <p class="testimonial-author">— App Store review</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"So clean and private. All my data stays on my phone, no account needed. The progress photos make me never want to go back."</p>
+        <p class="testimonial-author">— App Store review</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding: 0 24px 100px; max-width: 1168px; margin: 0 auto;">
+    <div class="cta-section">
+      <h2>Ready to stop?</h2>
+      <p>Start your 7-day free trial. No commitment, no credit card upfront.</p>
+      <a href="https://apps.apple.com/app/id6761150154" class="btn-white">
+        <span>🍎</span> Download NailFree Free
+      </a>
+      <p class="cta-note">Available on iPhone · iOS 17+ · Free to start · Pro from $4.99/mo</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="/" class="footer-logo">
+      <div class="footer-logo-icon">🤚</div>
+      <span class="footer-logo-text">NailFree</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Use</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="mailto:jculbertson@gmail.com">Contact</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Jason Culbertson. All rights reserved.</span>
+  </footer>
+
+</body>
+</html>

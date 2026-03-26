@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support – NailFree</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #2e7d5e;
+      --primary-light: #3d9b76;
+      --sage-light: #eaf5ef;
+      --dark: #0f1f17;
+      --text: #1a2e24;
+      --text-secondary: #4a6358;
+      --bg: #f7faf8;
+      --white: #ffffff;
+      --border: #ddeee6;
+    }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    nav { position: sticky; top: 0; z-index: 100; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; background: rgba(247,250,248,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--primary), #5aab87); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+    .nav-logo-text { font-size: 17px; font-weight: 700; color: var(--text); }
+    .nav-back { font-size: 14px; color: var(--primary); text-decoration: none; font-weight: 500; }
+    .nav-back:hover { text-decoration: underline; }
+    .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 100px; }
+    h1 { font-size: 40px; font-weight: 800; color: var(--dark); letter-spacing: -1px; margin-bottom: 8px; }
+    .meta { color: var(--text-secondary); font-size: 14px; margin-bottom: 48px; }
+    h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-top: 44px; margin-bottom: 12px; }
+    p, li { color: #2e4438; font-size: 16px; line-height: 1.75; }
+    ul { padding-left: 20px; margin-top: 8px; }
+    li { margin-bottom: 6px; }
+    a { color: var(--primary); }
+    .faq-card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 12px; }
+    .faq-card h3 { font-size: 16px; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
+    .faq-card p { font-size: 15px; }
+    .contact-box { background: linear-gradient(135deg, var(--primary), #5aab87); border-radius: 20px; padding: 40px; text-align: center; margin-top: 56px; }
+    .contact-box h2 { color: white; margin-top: 0; }
+    .contact-box p { color: rgba(255,255,255,0.8); margin-bottom: 24px; }
+    .contact-btn { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--primary); text-decoration: none; padding: 14px 28px; border-radius: 100px; font-size: 15px; font-weight: 700; transition: transform 0.15s; }
+    .contact-btn:hover { transform: translateY(-2px); }
+    footer { background: var(--dark); color: rgba(255,255,255,0.4); text-align: center; padding: 28px; font-size: 13px; }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 12px; }
+    footer a:hover { color: white; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon">🤚</div>
+      <span class="nav-logo-text">NailFree</span>
+    </a>
+    <a href="/" class="nav-back">← Back to home</a>
+  </nav>
+
+  <div class="container">
+    <h1>Support</h1>
+    <p class="meta">NailFree · We typically respond within 24 hours</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-card">
+      <h3>Is NailFree free to use?</h3>
+      <p>Yes! NailFree is free to download and use. NailFree Pro unlocks advanced features with a 7-day free trial, then $4.99/month or $29.99/year. You can cancel anytime in Settings → Apple ID → Subscriptions.</p>
+    </div>
+
+    <div class="faq-card">
+      <h3>How do I cancel my Pro subscription?</h3>
+      <p>Go to Settings → Apple ID → Subscriptions → NailFree, then tap Cancel Subscription. You'll keep Pro access until the end of your current billing period. NailFree does not process payments directly — all billing is through Apple.</p>
+    </div>
+
+    <div class="faq-card">
+      <h3>Where is my data stored?</h3>
+      <p>All your data — check-ins, urge logs, photos, and streaks — is stored locally on your device. NailFree does not have servers, does not collect your personal data, and never shares anything with third parties.</p>
+    </div>
+
+    <div class="faq-card">
+      <h3>How do I restore my purchase on a new device?</h3>
+      <p>Open NailFree, go to Settings, and tap "Restore Purchases." Make sure you're signed in with the same Apple ID used to purchase NailFree Pro.</p>
+    </div>
+
+    <div class="faq-card">
+      <h3>My streak reset unexpectedly. Can I fix it?</h3>
+      <p>Streaks reset when a day is missed in your check-in history. If this happened due to a technical issue, please email us with your device model and iOS version and we'll look into it.</p>
+    </div>
+
+    <div class="faq-card">
+      <h3>The widget isn't showing my streak. How do I fix it?</h3>
+      <p>Try removing and re-adding the widget. If the issue persists, go to Settings in NailFree and ensure the widget is enabled. The widget uses on-device shared data (no internet needed).</p>
+    </div>
+
+    <div class="faq-card">
+      <h3>How do I delete my data?</h3>
+      <p>To delete all your data, go to Settings in NailFree and tap "Delete All Data." This permanently removes everything from your device. Deleting the app also removes all associated data.</p>
+    </div>
+
+    <div class="contact-box">
+      <h2>Still need help?</h2>
+      <p>Email us and we'll get back to you within 24 hours.</p>
+      <a href="mailto:jculbertson@gmail.com" class="contact-btn">✉️ Email Support</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="/">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <br><br>
+    © 2026 Jason Culbertson. All rights reserved.
+  </footer>
+</body>
+</html>
