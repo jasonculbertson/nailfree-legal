@@ -64,12 +64,14 @@
     .nav-logo-icon {
       width: 36px;
       height: 36px;
-      background: var(--teal);
       border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .nav-logo-icon img {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
     .nav-logo-text {
       font-family: 'Fraunces', serif;
@@ -255,6 +257,14 @@
       justify-content: center;
       padding: 24px 16px;
       color: white;
+      overflow: hidden;
+    }
+    .phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
     }
     .phone-icon {
       width: 64px;
@@ -723,12 +733,14 @@
     .footer-brand-icon {
       width: 32px;
       height: 32px;
-      background: var(--teal);
       border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .footer-brand-icon img {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
     .footer-brand-name {
       font-family: 'Fraunces', serif;
@@ -792,14 +804,14 @@
   <!-- NAV -->
   <nav id="main-nav">
     <a href="/" class="nav-logo">
-      <div class="nav-logo-icon">🌿</div>
+      <div class="nav-logo-icon"><img src="AppIcon.png" alt="NailFree"></div>
       <span class="nav-logo-text">NailFree</span>
     </a>
     <ul class="nav-links">
       <li><a href="#how-it-works">How it works</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#" class="nav-cta">Download Free</a></li>
+      <li><a href="https://apps.apple.com/app/id6761150154" class="nav-cta">Download Free</a></li>
     </ul>
   </nav>
 
@@ -832,42 +844,19 @@
       <div class="phone-mockup">
         <div class="phone-pill"></div>
         <div class="phone-screen">
-          <div style="font-size:36px; margin-bottom:12px;">📊</div>
-          <div style="font-size:14px; font-weight:600; margin-bottom:6px;">Your Progress</div>
-          <div style="font-size:11px; opacity:0.6; text-align:center; margin-bottom:16px;">Day 12 streak</div>
-          <div class="phone-stats">
-            <div class="phone-stat">
-              <span class="phone-stat-num">12</span>
-              <span class="phone-stat-label">Days</span>
-            </div>
-            <div class="phone-stat">
-              <span class="phone-stat-num">94%</span>
-              <span class="phone-stat-label">Urges beat</span>
-            </div>
-          </div>
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/34/2e/83/342e8374-d403-205d-082c-57dea313cf7d/09_progress.png/400x800bb.png" alt="Progress tracking screen">
         </div>
       </div>
       <div class="phone-mockup center">
         <div class="phone-pill"></div>
         <div class="phone-screen">
-          <div class="phone-icon">🌿</div>
-          <div class="phone-title">NailFree</div>
-          <div class="phone-subtitle">Science-backed habit<br>reversal training</div>
-          <div class="phone-bar">
-            <span>Start Your Journey</span>
-          </div>
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e5/73/18/e573189d-f353-1239-735d-b0b546bef13d/07_home.png/400x800bb.png" alt="NailFree home screen">
         </div>
       </div>
       <div class="phone-mockup">
         <div class="phone-pill"></div>
         <div class="phone-screen">
-          <div style="font-size:36px; margin-bottom:12px;">🧠</div>
-          <div style="font-size:14px; font-weight:600; margin-bottom:6px;">Today's Exercise</div>
-          <div style="font-size:11px; opacity:0.6; text-align:center; margin-bottom:16px;">Awareness training</div>
-          <div style="background:rgba(255,255,255,0.1); border-radius:12px; padding:14px; text-align:center;">
-            <div style="font-size:28px; font-weight:700;">3:00</div>
-            <div style="font-size:10px; opacity:0.6; margin-top:4px;">minutes</div>
-          </div>
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cf/bd/c5/cfbdc5ca-01a7-c39e-881f-71810cdf8174/10_program.png/400x800bb.png" alt="Program overview screen">
         </div>
       </div>
     </div>
@@ -876,16 +865,16 @@
   <!-- STATS STRIP -->
   <div class="stats-strip">
     <div class="stat-item">
-      <span class="stat-number">93%</span>
-      <span class="stat-label">of users report reduced urges in week 1</span>
+      <span class="stat-number">HRT</span>
+      <span class="stat-label">clinically proven behavioral therapy</span>
     </div>
     <div class="stat-item">
       <span class="stat-number">21</span>
       <span class="stat-label">days average to form a new habit</span>
     </div>
     <div class="stat-item">
-      <span class="stat-number">4.8★</span>
-      <span class="stat-label">average App Store rating</span>
+      <span class="stat-number">Free</span>
+      <span class="stat-label">to download on iPhone</span>
     </div>
   </div>
 
@@ -927,16 +916,14 @@
             </div>
           </div>
         </div>
-        <div class="how-visual">
-          <div class="how-visual-icon">🧠</div>
-          <h3>Rewire your brain</h3>
-          <p>NailFree's structured program follows the same techniques used by clinical therapists — adapted for daily mobile use.</p>
-          <div class="how-visual-tags">
-            <span class="tag">Habit Reversal Training</span>
-            <span class="tag">Urge Logging</span>
-            <span class="tag">Progress Streaks</span>
-            <span class="tag">Smart Reminders</span>
-            <span class="tag">Daily Exercises</span>
+        <div class="how-visual" style="padding: 0; background: none; box-shadow: none; overflow: visible; height: auto;">
+          <div style="display: flex; gap: 16px; justify-content: center; align-items: flex-end;">
+            <div style="width: 170px; height: 360px; background: #111; border-radius: 28px; border: 6px solid #333; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.35); flex-shrink: 0;">
+              <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/19/e1/59/19e159d2-25b3-8da5-24ba-f3abafecb711/01_welcome.png/400x800bb.png" alt="Welcome screen" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
+            </div>
+            <div style="width: 190px; height: 400px; background: #111; border-radius: 32px; border: 6px solid #333; overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,0.4); flex-shrink: 0; transform: translateY(-20px);">
+              <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5f/cd/07/5fcd07b0-fcab-2337-0fd2-7847d574d723/03_triggers.png/400x800bb.png" alt="Triggers screen" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
+            </div>
           </div>
         </div>
       </div>
@@ -1053,7 +1040,7 @@
       <div class="footer-top">
         <div>
           <div class="footer-brand">
-            <div class="footer-brand-icon">🌿</div>
+            <div class="footer-brand-icon"><img src="AppIcon.png" alt="NailFree"></div>
             <span class="footer-brand-name">NailFree</span>
           </div>
           <p class="footer-tagline">Science-backed habit reversal training to help you stop biting your nails for good.</p>
